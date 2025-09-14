@@ -21,6 +21,10 @@
     <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.*')">
         {{ __('Usuarios') }}
     </x-nav-link>
+    
+    <x-nav-link :href="route('formulario.index')" :active="request()->routeIs('formulario.*')">
+    {{ __('Formulario') }}
+</x-nav-link>
 
     <x-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
         {{ __('Clientes Frecuentes') }}

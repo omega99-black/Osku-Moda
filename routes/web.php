@@ -67,6 +67,11 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     ->get('/estados_seguimiento', [EstadoSeguimientoController::class, 'index'])
     ->name('estados_seguimiento.index');
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
+    ->get('/formulario', function () {
+        return view('formulario.formulario');
+    })->name('formulario.index');
+
 // 🔹 Grupo protegido (Dashboard)
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
     ->group(function () {
