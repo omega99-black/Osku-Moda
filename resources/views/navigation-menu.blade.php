@@ -15,9 +15,57 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
             </div>
 
+            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+    <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.*')">
+        {{ __('Usuarios') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
+        {{ __('Clientes Frecuentes') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('categorias.index') }}" :active="request()->routeIs('categorias.*')">
+        {{ __('Categorías') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos.*')">
+        {{ __('Productos') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('categorias_productos.index') }}" :active="request()->routeIs('categorias_productos.*')">
+        {{ __('Categoría del producto') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('metodos_pago.index') }}" :active="request()->routeIs('metodos_pago.*')">
+        {{ __('Métodos de pago') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.*')">
+        {{ __('Proveedores') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.*')">
+        {{ __('Compras') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('detalles_compra.index') }}" :active="request()->routeIs('detalles_compra.*')">
+        {{ __('Detalle de compra') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('ventas.index') }}" :active="request()->routeIs('ventas.*')">
+        {{ __('Ventas') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('detalles_venta.index') }}" :active="request()->routeIs('detalles_venta.*')">
+        {{ __('Detalle de venta') }}
+    </x-nav-link>
+
+    <x-nav-link href="{{ route('estados_seguimiento.index') }}" :active="request()->routeIs('estados_seguimiento.*')">
+        {{ __('Estados de seguimiento') }}
+    </x-nav-link>
+</div>
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
