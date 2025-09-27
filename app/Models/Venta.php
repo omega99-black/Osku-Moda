@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -11,9 +10,8 @@ class Venta extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'fecha',
-        'total',
         'id_cliente',
-        'id_metodo_pago',
+        'fecha_venta', 
+        'total_venta'
     ];
 }

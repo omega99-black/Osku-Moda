@@ -4,13 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EstadoSeguimiento extends Model
+class EstadosSeguimiento extends Model
 {
     protected $table = 'estados_seguimiento';
-    protected $primaryKey = 'id_estado_seguimiento';
+    protected $primaryKey = 'id_estado';
     public $timestamps = false;
 
     protected $fillable = [
-        'nombre',
+        'nombre_estado'
     ];
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetalleVenta;
 use Illuminate\Http\Request;
 
 class DetalleVentaController extends Controller
@@ -11,8 +12,8 @@ class DetalleVentaController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $detalles = DetalleVenta::orderBy('id_detalle', 'asc')->get();
+        return view('detalle_venta.index', compact('detalles'));    }
 
     /**
      * Show the form for creating a new resource.

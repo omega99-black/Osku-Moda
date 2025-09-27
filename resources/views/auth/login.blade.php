@@ -1,48 +1,54 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar sesión</title>
+  <link href="https://fonts.googleapis.com/css?family=Instrument+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="left-form">
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
 
-        <x-validation-errors class="mb-4" />
+        <div class="v261_249"></div>
 
-        @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
-        @endsession
+        <h1 class="v211_207">Inicia sesión en tu cuenta</h1>
+        <p class="v211_211">¿Aún no eres miembro? 
+          <a href="{{ route('registro') }}" class="link">Regístrate</a>
+        </p>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+        <label class="v211_213">Dirección de correo electrónico</label>
+        <input name="email" type="email" placeholder="Correo electrónico" class="input-campo" required autofocus>
 
-            <div>
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            </div>
+        <label class="v211_215">Contraseña</label>
+        <input name="password" type="password" placeholder="Contraseña" class="input-campo" required>
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
+        <div class="checkbox-container">
+          <label>
+            <input type="checkbox" name="remember" class="checkbox-custom" style="display:none;">
+            <span class="checkmark"></span>
+          </label>
+          <span class="v211_220">Recuérdame</span>
+        </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+        <a href="{{ route('password.request') }}" class="v211_226">¿Olvidaste tu contraseña?</a>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+        <button type="submit" class="btn-Iniciar-sesion" href="btn-Iniciar-sesion">Iniciar sesión</button>        
+        <div class="linea-contenedor">
+          <div class="linea"></div>
+          <span class="linea-texto">O continuar con</span>
+          <div class="linea"></div>
+        </div>
 
-                <x-button class="ms-4">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        <a href="https://accounts.google.com/" target="_blank" class="google-wrapper">
+          <div class="google-icon"></div>
+          <span>Google</span>
+        </a>
+      </form>
+    </div>
+    <div class="right-image"></div>
+  </div>
+</body>
+</html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EstadosSeguimiento;
 use Illuminate\Http\Request;
 
 class EstadoSeguimientoController extends Controller
@@ -11,7 +12,8 @@ class EstadoSeguimientoController extends Controller
      */
     public function index()
     {
-        //
+        $estados = EstadosSeguimiento::orderBy('id_estado', 'asc')->get();
+        return view('estados_seguimiento.index', compact('estados'));
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\MetodosPago;
 
 class MetodoPagoController extends Controller
 {
@@ -11,7 +12,8 @@ class MetodoPagoController extends Controller
      */
     public function index()
     {
-        //
+        $metodos = MetodosPago::orderBy('id_metodo_pago', 'asc')->get();
+        return view('metodos_pago.index', compact('metodos'));
     }
 
     /**

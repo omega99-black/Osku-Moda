@@ -15,11 +15,34 @@ use App\Http\Controllers\DetalleVentaController;
 use App\Http\Controllers\EstadoSeguimientoController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Inicio');
+})->name('Inicio');
+
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/tablas', function () {
+        return view('navigation-menu'); // aquí cargas tus tablas
+    })->name('tablas');
 });
 
+Route::get('/registro', function () {
+    return view('auth.registro');
+})->name('registro'); 
+
+Route::get('/contactanos', function () {
+    return view('contactanos');
+})->name('contactanos');
+
+Route::get('/error404', function () {
+    return view('error404');
+})->name('error404');
+
 // 🔹 Tus rutas actuales (no las borro)
-Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
+ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
     ->get('/usuarios', [UsuarioController::class, 'index'])
     ->name('usuarios.index');
 
@@ -72,12 +95,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         return view('formulario.formulario');
     })->name('formulario.index');
 
-// 🔹 Grupo protegido (Dashboard)
+//  Grupo protegido
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])
     ->group(function () {
-        Route::get('/dashboard', function () {
-            return view('dashboard');
-        })->name('dashboard');
+        Route::get('/Inicio', function () {
+            return view('Inicio');
+        })->name('Inicio');
     });
 
 // 🔹 Nuevos resource() para que existan create, store, edit, etc.

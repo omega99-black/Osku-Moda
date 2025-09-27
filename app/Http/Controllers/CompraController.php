@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Compra;
@@ -9,7 +8,7 @@ class CompraController extends Controller
 {
     public function index()
     {
-        $usuarios = Compra::all();
+        $compras = Compra::orderBy('id_compra', 'asc')->get();
         return view('compras.index', compact('compras'));
     }
 }
