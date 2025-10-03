@@ -23,7 +23,8 @@
                             <th class="border px-4 py-2">Nombre</th>
                             <th class="border px-4 py-2">Email</th>
                             <th class="border px-4 py-2">Estado</th>
-                        </tr>
+                            <th class="border px-4 py-2">id_rol</th>
+                                                </tr>
                     </thead>
                     <tbody>
                         @foreach($usuarios as $usuario)
@@ -32,6 +33,7 @@
                                 <td class="border px-4 py-2">{{ $usuario->nombre }}</td>
                                 <td class="border px-4 py-2">{{ $usuario->email }}</td>
                                 <td class="border px-4 py-2">{{ $usuario->estado }}</td>
+                                <td class="border px-4 py-2">{{ $usuario->id_rol }}</td>
                             </tr>
                         @endforeach
                     </tbody>

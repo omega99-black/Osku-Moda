@@ -28,8 +28,8 @@
                     <div class="mb-4">
                         <label class="block text-gray-700">Estado</label>
                         <select name="estado" class="w-full border rounded p-2">
-                            <option value="Activo">Activo</option>
-                            <option value="Inactivo">Inactivo</option>
+                        <option value="activo">Activo</option> 
+                        <option value="inactivo">Inactivo</option> 
                         </select>
                     </div>
 

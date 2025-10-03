@@ -34,7 +34,7 @@
       <a href="#" class="link-mujeres">Mujeres</a>
       <a href="#" class="link-ninos">Niños</a>
       <a href="#" class="link-otros">Otros</a>
-      <a href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.*')" class="link-usuarios"> Usuarios</a>
+      <a href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.*')" class="link-usuarios"> Dashboard</a>
       <a href="{{ route('login') }}" class="link-login">Iniciar sesión</a>
       <a href="{{ route('registro') }}" class="link-crear-cuenta">Crear una cuenta</a>
       <div class="linea-vertical"></div>
